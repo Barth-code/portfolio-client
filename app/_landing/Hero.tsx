@@ -5,21 +5,25 @@ import { cn } from "@/lib/utils";
 const Hero = () => {
   return (
     <Section classNme="flex flex-col gap-2">
-      <h1 className="text-4xl font-bold">Salu je suis Jon🖖 </h1>
-      <p>
-        J'aide les
-        <Code>créateurs youtube </Code>
-        <i className="fa-brands fa-youtube"></i> à augmenter des vues avec des
-        montage captivante de vidéo virales
+      <h1 className="text-4xl font-bold">Salut, je suis Jon🖖 </h1>
+      <p className="text-lg leading-9">
+        J'aide les{" "}
+        <Code className="whitespace-nowrap">
+          créateurs <i className="fa-brands fa-youtube"></i> youtube
+        </Code>{" "}
+        à augmenter des vues avec des montages captivantes de{" "}
+        <Code className="whitespace-nowrap">
+          <i className="fa-solid fa-video"></i> vidéos virales
+        </Code>
       </p>
     </Section>
   );
 };
-const Code = (props: PropsWithChildren) => {
+const Code = (props: PropsWithChildren<{ className?: string }>) => {
   return (
     <span
       className={cn(
-        "px-1 -mx-0.5 rounded-md  bg-accent/20 border-accent py-1",
+        "px-1 -mx-1 rounded-md items-center bg-accent/20 border-accent border py-1",
         props.children
       )}
     >
